@@ -1,0 +1,111 @@
+/* --- Общие настройки --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* --- Шапка --- */
+header { background: #fff; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; color: #2c3e50; display: flex; align-items: center; gap: 10px; }
+.logo i { color: #00aaff; }
+nav ul { display: flex; gap: 25px; font-size: 14px; color: #555; }
+nav ul li:hover { color: #00aaff; cursor: pointer; }
+
+/* --- Баннер --- */
+.hero {
+    width: 100%;
+    height: 450px;
+    background-image: url('images/dfgdgdg.webp'); 
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Затемняющий слой, чтобы текст был читаемым */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1 {
+    position: relative;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    z-index: 2;
+    padding: 0 20px;
+}
+
+/* --- Услуги --- */
+.services { padding: 60px 0; text-align: center; }
+.services-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.service-item { flex: 1; min-width: 200px; padding: 20px; }
+.service-icon { font-size: 50px; margin-bottom: 20px; color: #000; }
+.service-item h3 { font-size: 18px; margin-bottom: 15px; font-weight: 500; }
+.service-item p { font-size: 13px; color: #777; line-height: 1.5; }
+
+/* --- Политика --- */
+.policy { padding: 50px 0; text-align: center; max-width: 900px; margin: 0 auto; }
+.policy h2 { font-size: 32px; margin-bottom: 10px; color: #444; }
+.policy h4 { font-weight: normal; color: #777; margin-bottom: 30px; }
+.policy p { font-size: 14px; color: #666; margin-bottom: 20px; text-align: justify; }
+
+/* --- Галерея --- */
+.gallery { padding: 40px 0; background-color: #fafafa; }
+.gallery h2 { text-align: center; margin-bottom: 30px; font-size: 28px; }
+.gallery-grid { display: flex; gap: 20px; }
+.gallery-item { flex: 1; height: 250px; background-color: #ddd; border-radius: 4px; overflow: hidden; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.gallery-item img:hover { transform: scale(1.05); }
+
+/* --- Отзывы --- */
+.reviews { padding: 60px 0; text-align: center; }
+.reviews h2 { margin-bottom: 20px; font-size: 28px; }
+.rating-summary { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 40px; font-size: 14px; }
+.stars { color: #ffc107; }
+.review-card { background: #f5f5f5; border-radius: 8px; padding: 20px; max-width: 800px; margin: 0 auto 20px; text-align: left; }
+.review-header { display: flex; align-items: center; margin-bottom: 10px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background-color: #ddd; margin-right: 15px; }
+.review-info b { display: block; font-size: 14px; }
+.review-info span { font-size: 12px; color: #888; }
+.review-text { font-size: 14px; color: #333; }
+
+/* --- Карта --- */
+.map-section { width: 100%; height: 400px; background-color: #e5e3df; display: flex; justify-content: center; align-items: center; border-top: 1px solid #ddd; }
+.map-placeholder { text-align: center; color: #666; }
+
+/* --- Подвал --- */
+footer { background-color: #3e6b5e; color: #fff; padding: 50px 0; font-size: 13px; }
+.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h4 { font-size: 16px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; display: inline-block; }
+.footer-col ul li { margin-bottom: 8px; color: #d1d1d1; cursor: pointer; }
+.footer-col ul li:hover { color: #fff; }
+.footer-col p { margin-bottom: 8px; color: #d1d1d1; }
+
+/* --- Плавающие кнопки --- */
+.fixed-btn { position: fixed; bottom: 20px; z-index: 2000; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.btn-appointment { left: 20px; width: 70px; height: 70px; background-color: #00aaff; border-radius: 50%; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 14px; font-weight: bold; text-align: center; line-height: 1.2; }
+.btn-chat { right: 20px; background-color: #fff; padding: 10px 20px; border-radius: 30px; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #333; }
+.btn-chat i { color: #4267B2; font-size: 18px; }
+
+/* --- Адаптив для телефонов --- */
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .hero h1 { font-size: 28px; }
+    .services-grid, .gallery-grid { flex-direction: column; }
+    .footer-grid { flex-direction: column; gap: 20px; }
+}
