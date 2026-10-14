@@ -1,0 +1,361 @@
+/* =========================================================
+   ОБЩИЕ НАСТРОЙКИ
+   ========================================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* =========================================================
+   ШАПКА
+   ========================================================= */
+header { background: #fff; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; color: #2c3e50; display: flex; align-items: center; gap: 10px; }
+.logo i { color: #00aaff; }
+
+nav ul { display: flex; gap: 25px; font-size: 14px; color: #555; }
+nav ul li { position: relative; transition: color .3s; }
+nav ul li:hover { color: #00aaff; cursor: pointer; }
+
+nav ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 0; height: 2px;
+    background: #00aaff;
+    transition: width .3s;
+}
+nav ul li:not(:last-child):hover::after { width: 100%; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+    width: 100%;
+    height: 450px;
+    background-image: url('images/dfgdgdg.webp');
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; padding: 0 20px; }
+
+.hero h1 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    animation: fadeUp 1s ease-out both;
+}
+
+.hero p {
+    color: #e8f6ff;
+    font-size: 18px;
+    margin: 15px 0 25px;
+    animation: fadeUp 1s ease-out .2s both;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #00aaff;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 0 6px 20px rgba(0,170,255,0.5);
+    animation: fadeUp 1s ease-out .4s both;
+    transition: background .3s, transform .3s;
+}
+.hero-btn:hover { background: #0090dd; transform: translateY(-2px); }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   УСЛУГИ
+   ========================================================= */
+.services { padding: 60px 0; text-align: center; }
+.services-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+
+.service-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #eee;
+    transition: transform .35s, box-shadow .35s, border-color .35s;
+    cursor: pointer;
+}
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(0,170,255,0.18);
+    border-color: #00aaff;
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    transition: color .35s, transform .35s;
+    display: inline-block;
+}
+.service-item:hover .service-icon {
+    color: #00aaff;
+    transform: scale(1.15) rotate(-8deg);
+}
+
+.service-item h3 { font-size: 18px; margin-bottom: 15px; font-weight: 500; }
+.service-item p { font-size: 13px; color: #777; line-height: 1.5; }
+
+/* =========================================================
+   ПОЛИТИКА (расширенная)
+   ========================================================= */
+.policy { padding: 70px 0; max-width: 1100px; margin: 0 auto; text-align: center; }
+.policy h2 { font-size: 32px; margin-bottom: 10px; color: #2c3e50; }
+.policy .subtitle { font-weight: normal; color: #777; margin-bottom: 45px; font-size: 15px; }
+
+.policy-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.policy-card {
+    flex: 1;
+    min-width: 280px;
+    background: #f7fbfe;
+    border: 1px solid #e0f0fa;
+    border-radius: 14px;
+    padding: 30px 28px;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.policy-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,170,255,0.12);
+    border-color: #00aaff;
+}
+.policy-card .card-icon {
+    width: 55px; height: 55px;
+    background: #00aaff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 15px rgba(0,170,255,0.35);
+}
+.policy-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+.policy-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.policy-list {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 30px 35px;
+    margin-bottom: 35px;
+    text-align: left;
+}
+.policy-list h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+.policy-list ul li {
+    font-size: 14px;
+    color: #555;
+    padding: 10px 0 10px 32px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+.policy-list ul li:last-child { border-bottom: none; }
+.policy-list ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #00aaff;
+    position: absolute;
+    left: 0; top: 10px;
+    font-size: 14px;
+}
+
+.policy-promise {
+    background: linear-gradient(135deg, #e8f6ff 0%, #d6efff 100%);
+    border-left: 5px solid #00aaff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.policy-promise i {
+    font-size: 36px;
+    color: #00aaff;
+    flex-shrink: 0;
+}
+.policy-promise p {
+    font-size: 15px;
+    color: #2c3e50;
+    font-style: italic;
+    margin: 0;
+}
+
+/* =========================================================
+   ГАЛЕРЕЯ
+   ========================================================= */
+.gallery { padding: 40px 0; background-color: #fafafa; }
+.gallery h2 { text-align: center; margin-bottom: 30px; font-size: 28px; }
+.gallery-grid { display: flex; gap: 20px; }
+
+.gallery-item {
+    flex: 1;
+    height: 250px;
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* =========================================================
+   ОТЗЫВЫ
+   ========================================================= */
+.reviews { padding: 60px 0; text-align: center; }
+.reviews h2 { margin-bottom: 20px; font-size: 28px; }
+.rating-summary { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 40px; font-size: 14px; }
+.stars { color: #ffc107; }
+
+.review-card {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: left;
+    transition: transform .3s, box-shadow .3s;
+}
+.review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.review-header { display: flex; align-items: center; margin-bottom: 10px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background-color: #ddd; margin-right: 15px; }
+.review-info b { display: block; font-size: 14px; }
+.review-info span { font-size: 12px; color: #888; }
+.review-text { font-size: 14px; color: #333; }
+
+/* =========================================================
+   КАРТА
+   ========================================================= */
+.map-section {
+    width: 100%; height: 400px;
+    background-color: #e5e3df;
+    display: flex; justify-content: center; align-items: center;
+    border-top: 1px solid #ddd;
+}
+.map-placeholder { text-align: center; color: #666; }
+
+/* =========================================================
+   ПОДВАЛ
+   ========================================================= */
+footer { background-color: #3e6b5e; color: #fff; padding: 50px 0; font-size: 13px; }
+.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.footer-col ul li {
+    margin-bottom: 8px;
+    color: #d1d1d1;
+    cursor: pointer;
+    transition: color .2s, transform .2s;
+}
+.footer-col ul li:hover { color: #fff; transform: translateX(3px); }
+.footer-col p { margin-bottom: 8px; color: #d1d1d1; }
+
+/* =========================================================
+   ПЛАВАЮЩИЕ КНОПКИ
+   ========================================================= */
+.fixed-btn {
+    position: fixed; bottom: 20px;
+    z-index: 2000; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.btn-appointment {
+    left: 20px;
+    width: 70px; height: 70px;
+    background-color: #00aaff;
+    border-radius: 50%;
+    color: #fff;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 14px; font-weight: bold;
+    text-align: center; line-height: 1.2;
+    transition: transform .3s, background .3s;
+}
+.btn-appointment:hover { background: #0090dd; transform: scale(1.1); }
+
+.btn-chat {
+    right: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; color: #333;
+    transition: transform .3s;
+}
+.btn-chat:hover { transform: translateY(-3px); }
+.btn-chat i { color: #4267B2; font-size: 18px; }
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 15px; }
+    .services-grid, .gallery-grid { flex-direction: column; }
+    .footer-grid { flex-direction: column; gap: 20px; }
+    .policy-promise { flex-direction: column; text-align: center; }
+}
